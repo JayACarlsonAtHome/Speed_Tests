@@ -4,15 +4,14 @@ This project contains all the necessary code to test
 multiple functions and compare how long they run.
 
 My philosophy for testing is that if it takes
-less than a second it is not a meaning full test.
+less than a second it is not a meaningfull test.
 
 So for functions that don't take long just add one more
-zero at the end of the maxLoopCount variable until the
+zeros at the end of the maxLoopCount variable until the
 times are inline with a reasonable testing time.
 
 Once you have your testing times set you can run this
-and see the results. like this
-
+and see the results. 
 
 Test : Start    : Stop     : Durations
 000x : HH:MM:SS : HH:MM:SS : YYY:DDD:HH:MM:SS
