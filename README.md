@@ -14,11 +14,9 @@ Once you have your testing times set you can run this
 and see the results. like this
 
 
-|Test | Start    | Stop     | Durations        |
-
+|Test | Start      | Stop       | Durations            |
 |000x | HH\:MM\:SS | HH\:MM\:SS | YYY\:DDD\:HH\:MM\:SS |
-
-|==============================================|
+|=====|============|============|=+++++================|
 
 |0004 | 05\:11\:20 | 05\:11\:48 | 000\:000\:00\:00\:28 |
 
