@@ -231,23 +231,6 @@ sstr lowerCaseString3(sstr& some_value)
     return result;
 }
 
-/*
-sstr lowerCaseString4(sstr& some_value)
-{
-    int oneChar;
-    auto len = some_value.length();
-    char strChar1[len + 1];
-    char strChar2[len + 1];
-    strcpy(strChar1, some_value.c_str());
-    for (auto idx = 0ul; idx < len; ++idx)
-    {
-        strChar2[idx] =  std::tolower(strChar1[idx]);
-    }
-    sstr result {strChar2};
-    return result;
-}
-*/
-
 sstr lowerCaseString4(sstr& some_value)
 {
     auto len = some_value.length();
@@ -286,6 +269,21 @@ sstr lowerCaseString6(sstr& some_value)
     return result;
 }
 
+sstr lowerCaseString7(sstr& some_value)
+{
+    auto pStr = some_value.c_str();
+    auto  len = some_value.length();
+    auto  max = len + 1;
+    char CStr[len+1];
+    unsigned long itr = 0;
+    for(; itr < max; ++pStr, ++itr)
+    {
+        CStr[itr] = std::tolower(*pStr);
+    }
+    std::string result { CStr };
+    return result;
+}
+
 
 void preTest_Header()
 {
@@ -321,12 +319,13 @@ int main() {
     sstr test = "aaaaakaakakakaaaaakaaakakaaaaaaHaaaaaaaaaaakqqqqqqqqqqkHoowskkwiskqiakaiqkaqiqkaiqQ";
     int maxLoopCount = 100000000;
     //maxLoopCount = 1;
-    //do_test(1, maxLoopCount, lowerCaseString1, test);
-    //do_test(2, maxLoopCount, lowerCaseString2, test);
-    //do_test(3, maxLoopCount, lowerCaseString3, test);
+    do_test(1, maxLoopCount, lowerCaseString1, test);
+    do_test(2, maxLoopCount, lowerCaseString2, test);
+    do_test(3, maxLoopCount, lowerCaseString3, test);
     do_test(4, maxLoopCount, lowerCaseString4, test);
     do_test(5, maxLoopCount, lowerCaseString5, test);
     do_test(6, maxLoopCount, lowerCaseString6, test);
+    do_test(7, maxLoopCount, lowerCaseString6, test);
 
     sstr test0 = test;
     sstr test1 = lowerCaseString1(test);
@@ -335,6 +334,7 @@ int main() {
     sstr test4 = lowerCaseString4(test);
     sstr test5 = lowerCaseString5(test);
     sstr test6 = lowerCaseString6(test);
+    sstr test7 = lowerCaseString7(test);
 
     std::cout << "test0 = ***" << test0 << "***" <<std::endl;
     std::cout << "test1 = ***" << test1 << "***" <<std::endl;
@@ -343,6 +343,7 @@ int main() {
     std::cout << "test4 = ***" << test4 << "***" <<std::endl;
     std::cout << "test5 = ***" << test5 << "***" <<std::endl;
     std::cout << "test6 = ***" << test6 << "***" <<std::endl;
+    std::cout << "test7 = ***" << test7 << "***" <<std::endl;
 
     test = "";
     test0 = test;
@@ -352,6 +353,7 @@ int main() {
     test4 = lowerCaseString4(test);
     test5 = lowerCaseString5(test);
     test6 = lowerCaseString6(test);
+    test7 = lowerCaseString7(test);
 
     std::cout << "test0 = ***" << test0 << "***" <<std::endl;
     std::cout << "test1 = ***" << test1 << "***" <<std::endl;
@@ -360,7 +362,26 @@ int main() {
     std::cout << "test4 = ***" << test4 << "***" <<std::endl;
     std::cout << "test5 = ***" << test5 << "***" <<std::endl;
     std::cout << "test6 = ***" << test6 << "***" <<std::endl;
+    std::cout << "test7 = ***" << test7 << "***" <<std::endl;
 
+    test = " ";
+    test0 = test;
+    test1 = lowerCaseString1(test);
+    test2 = lowerCaseString2(test);
+    test3 = lowerCaseString3(test);
+    test4 = lowerCaseString4(test);
+    test5 = lowerCaseString5(test);
+    test6 = lowerCaseString6(test);
+    test7 = lowerCaseString7(test);
+
+    std::cout << "test0 = ***" << test0 << "***" <<std::endl;
+    std::cout << "test1 = ***" << test1 << "***" <<std::endl;
+    std::cout << "test2 = ***" << test2 << "***" <<std::endl;
+    std::cout << "test3 = ***" << test3 << "***" <<std::endl;
+    std::cout << "test4 = ***" << test4 << "***" <<std::endl;
+    std::cout << "test5 = ***" << test5 << "***" <<std::endl;
+    std::cout << "test6 = ***" << test6 << "***" <<std::endl;
+    std::cout << "test7 = ***" << test7 << "***" <<std::endl;
 
     return 0;
 }
