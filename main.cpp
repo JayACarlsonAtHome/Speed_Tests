@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <cstring>
+#include <algorithm>
 
 using sstr = std::string;
 
@@ -285,6 +286,16 @@ sstr lowerCaseString7(sstr& some_value)
 }
 
 
+sstr lowerCaseString8(sstr& some_value)
+{
+    std::transform(some_value.begin(), some_value.end(), some_value.begin(), ::tolower);
+        return some_value;
+}
+
+
+// std::transform(data.begin(), data.end(), data.begin(), ::tolower);
+
+
 void preTest_Header()
 {
     std::cout << "Test : Start    : Stop     : Durations        " << std::endl;
@@ -325,7 +336,8 @@ int main() {
     do_test(4, maxLoopCount, lowerCaseString4, test);
     do_test(5, maxLoopCount, lowerCaseString5, test);
     do_test(6, maxLoopCount, lowerCaseString6, test);
-    do_test(7, maxLoopCount, lowerCaseString6, test);
+    do_test(7, maxLoopCount, lowerCaseString7, test);
+    do_test(8, maxLoopCount, lowerCaseString8, test);
 
     sstr test0 = test;
     sstr test1 = lowerCaseString1(test);
@@ -335,6 +347,7 @@ int main() {
     sstr test5 = lowerCaseString5(test);
     sstr test6 = lowerCaseString6(test);
     sstr test7 = lowerCaseString7(test);
+    sstr test8 = lowerCaseString8(test);
 
     std::cout << "test0 = ***" << test0 << "***" <<std::endl;
     std::cout << "test1 = ***" << test1 << "***" <<std::endl;
@@ -344,6 +357,7 @@ int main() {
     std::cout << "test5 = ***" << test5 << "***" <<std::endl;
     std::cout << "test6 = ***" << test6 << "***" <<std::endl;
     std::cout << "test7 = ***" << test7 << "***" <<std::endl;
+    std::cout << "test8 = ***" << test8 << "***" <<std::endl;
 
     test = "";
     test0 = test;
@@ -354,6 +368,7 @@ int main() {
     test5 = lowerCaseString5(test);
     test6 = lowerCaseString6(test);
     test7 = lowerCaseString7(test);
+    test8 = lowerCaseString8(test);
 
     std::cout << "test0 = ***" << test0 << "***" <<std::endl;
     std::cout << "test1 = ***" << test1 << "***" <<std::endl;
@@ -363,6 +378,7 @@ int main() {
     std::cout << "test5 = ***" << test5 << "***" <<std::endl;
     std::cout << "test6 = ***" << test6 << "***" <<std::endl;
     std::cout << "test7 = ***" << test7 << "***" <<std::endl;
+    std::cout << "test8 = ***" << test8 << "***" <<std::endl;
 
     test = " ";
     test0 = test;
@@ -373,6 +389,7 @@ int main() {
     test5 = lowerCaseString5(test);
     test6 = lowerCaseString6(test);
     test7 = lowerCaseString7(test);
+    test8 = lowerCaseString8(test);
 
     std::cout << "test0 = ***" << test0 << "***" <<std::endl;
     std::cout << "test1 = ***" << test1 << "***" <<std::endl;
@@ -382,6 +399,7 @@ int main() {
     std::cout << "test5 = ***" << test5 << "***" <<std::endl;
     std::cout << "test6 = ***" << test6 << "***" <<std::endl;
     std::cout << "test7 = ***" << test7 << "***" <<std::endl;
+    std::cout << "test8 = ***" << test8 << "***" <<std::endl;
 
     return 0;
 }
